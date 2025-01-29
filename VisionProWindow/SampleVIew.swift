@@ -2,17 +2,28 @@
 //  SampleVIew.swift
 //  VisionProWindow
 //
-//  Created by 溫家豪 on 2025/1/29.
+//  Created by wenflow on 2025/1/29.
 //
 
 import SwiftUI
 
+//7.建立一個動態圓圈View
 struct SampleVIew: View {
+    
+    var color: Color
+    var text: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Circle()
+                .foregroundColor(color)
+            
+            Text(text)
+                .font(.extraLargeTitle)
+        }.padding(50)
     }
 }
 
 #Preview {
-    SampleVIew()
+    SampleVIew(color: .blue, text: "你好")
 }
